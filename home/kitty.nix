@@ -14,7 +14,7 @@
       background_opacity = "0.9";
       dynamic_background_opacity = "yes";
     };
-    theme = "Catppuccin-Mocha";
+    themeFile = "Catppuccin-Mocha";
     extraConfig = ''
       # Disable window decorations
       hide_window_decorations titlebar-only
