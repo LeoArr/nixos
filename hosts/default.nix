@@ -36,19 +36,6 @@
     pulse.enable = true;
   };
 
-  programs.hyprland = {
-    enable = true;
-    package = input.hyprland.packages.${pkgs.system}.hyprland;
-  };
-
-  xdg.portal = {
-    enable = true;
-    extraPortals = with pkgs; [
-      xdg-desktop-portal-gtk
-      xdg-desktop-portal-hyprland
-    ];
-  };
-
   # Fonts
   fonts.packages = with pkgs; [
     (nerdfonts.override { fonts = [ "FiraCode" "JetBrainsMono" "Hack" ]; })
