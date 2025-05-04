@@ -120,7 +120,6 @@
 
   systemd.user.services.waybar = {
     Unit = {
-      Description = "Waybar status bar";
       PartOf = [ "graphical-session.target" ];
     };
     Service = {
