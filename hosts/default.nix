@@ -38,7 +38,7 @@
 
   programs.hyprland = {
     enable = true;
-    package: inputs.hyprland.packages.${pkgs.system}.hyprland;
+    package = input.hyprland.packages.${pkgs.system}.hyprland;
   };
 
   xdg.portal = {
@@ -61,7 +61,7 @@
   users.users.leo = {
     isNormalUser = true;
     description = "Leo";
-    extraGroups = [ "networkmanager" "wheel", "audio", "video" ];
+    extraGroups = [ "networkmanager" "wheel" "audio" "video" ];
     packages = with pkgs; [];
   };
 
