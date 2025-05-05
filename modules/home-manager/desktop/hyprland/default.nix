@@ -15,9 +15,6 @@ in
     lockCommand = mkOption {
       type = types.str;
     };
-
-    # Does not work :(
-    # xdg.configFile."hyprland.conf".source = ./hyprland.conf;
   };
 
   config = {
@@ -31,21 +28,12 @@ in
       "$printscreen" = "${pkgs.grimblast}/bin/grimblast copysave area";
       exec-once = "hyprpaper & waybar & swayidle -w & swaync & blueman-applet & nm-applet --indicator";
    
-    monitor = map
-      (m:
-        let
-          resolution = "${toString m.width}x${toString m.height}@${toString m.refreshRate}";
-          # position = "${toString m.x}x${toString m.y}";
-          # position = "auto-up";
-        in
-          "${m.name},${if m.enabled then "${resolution},${m.position},${toString m.scale}" else "disable"}"
-      )
-      config.desktop.monitors;
+   monitor = "DP-1, 2560x1440@60, 0x0, 1";
       
       general = {
-        border_size = 2;
-        gaps_in = 8;
-        gaps_out = 8;
+        border_size = 1;
+        gaps_in = 4;
+        gaps_out = 4;
         "col.active_border" = "rgba(${color.base0C}FF) rgba(${color.base05}FF) 45deg";
       };
 

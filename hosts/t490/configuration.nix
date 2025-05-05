@@ -33,6 +33,16 @@ in
   # Select internationalisation properties.
   i18n.defaultLocale = "en_US.UTF-8";
 
+  home-manager = {
+    extraSpecialArgs = { 
+      inherit inputs;
+      username = username;
+    };
+    users = {
+      "${username}" = import ./home.nix;
+    };
+  };
+
   # Enable sound with pipewire.
   services.pulseaudio.enable = false;
   security.rtkit.enable = true;
@@ -62,16 +72,6 @@ in
     isNormalUser = true;
     description = "Leo";
     extraGroups = [ "networkmanager" "wheel" ];
-  };
-
-  home-manager = {
-    extraSpecialArgs = { 
-      inherit inputs;
-      username = username;
-    };
-    users = {
-      "${username}" = import ./home.nix;
-    };
   };
 
   environment.variables = {
