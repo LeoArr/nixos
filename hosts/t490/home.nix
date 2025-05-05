@@ -17,16 +17,16 @@
   desktop = {
     theme = "dark";
     terminal = lib.getExe config.sh.package;
-    monitors = [
-      {
-        name = "DP-1";
-        width = 2560;
-        height = 1440;
-        wallpaper = config.styling.wallpaper;
-        x = 0;
-        y = 0;
-      }
-    ];
+    #monitors = [
+    #  {
+    #    name = "DP-1";
+    #    width = 2560;
+    #    height = 1440;
+    #    wallpaper = config.styling.wallpaper;
+    #    x = 0;
+    #    y = 0;
+    #  }
+    #];
 
     lockscreen = {
       wallpaper = config.styling.wallpaper;
