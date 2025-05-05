@@ -6,7 +6,7 @@ in {
   imports = [
     ./styling.nix
     ./monitors.nix
-    ./hyprland.nix
+    ./hyprland
     ./hyprpaper.nix
     ./swaylock.nix
     ./swayidle.nix

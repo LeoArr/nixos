@@ -15,6 +15,9 @@ in
     lockCommand = mkOption {
       type = types.str;
     };
+
+    # Does not work :(
+    # xdg.configFile."hyprland.conf".source = ./hyprland.conf;
   };
 
   config = {
