@@ -39,7 +39,7 @@ in
         ring-ver-color = color.base0F;
         line-color = "00000000";
 
-        show-failed-attempts = false; 
+        show-failed-attempts = true;
       };
     };
   };

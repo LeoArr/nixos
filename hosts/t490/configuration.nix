@@ -1,7 +1,3 @@
-# Edit this configuration file to define what should be installed on
-# your system.  Help is available in the configuration.nix(5) man page
-# and in the NixOS manual (accessible by running ‘nixos-help’).
-
 { config, pkgs, inputs, ... }:
 let
   tuigreet = "${pkgs.greetd.tuigreet}/bin/tuigreet";
@@ -23,7 +19,7 @@ in
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
-  networking.hostName = "t490"; # Host name
+  networking.hostName = hostname;
 
   # Enable networking
   networking.networkmanager.enable = true;
@@ -44,9 +40,14 @@ in
     };
   };
 
-  # Enable sound with pipewire.
-  services.pulseaudio.enable = false;
   security.rtkit.enable = true;
+  security.pam.services.swaylock = {
+    text = ''
+      auth include login
+    '';
+  };
+
+  services.pulseaudio.enable = false;
   services.pipewire = {
     enable = true;
     alsa.enable = true;
@@ -87,8 +88,6 @@ in
 
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
-  hardware.graphics.enable = true; # needed for wayland WMs
-
   environment.systemPackages = with pkgs; [
     # util
     git
@@ -116,6 +115,7 @@ in
     hyprpaper
   ];
 
+  hardware.graphics.enable = true; # needed for wayland WMs
   hardware.bluetooth.enable = true;
   services.blueman.enable = true;
 
@@ -135,5 +135,4 @@ in
   };
 
   system.stateVersion = "24.11";
-
 }

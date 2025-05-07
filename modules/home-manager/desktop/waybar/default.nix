@@ -8,7 +8,7 @@
       * {
         border: none;
         border-radius: 0;
-        font-size: 18px;
+        font-size: 12px;
         font-family: Monoid Mono Nerd Font;
       }
       
@@ -24,8 +24,8 @@
       #workspaces button {
         padding: 0 0.5em 0 0.5em;
         border-radius: 10px;
-        margin-top: 0.4em;
-        margin-left: 0.4em;
+        margin-top: 0.2em;
+        margin-left: 0.2em;
         color: @teal;
         background: @surfac2;
       }
@@ -49,8 +49,8 @@
         background: @mantle;
         padding: 0 0.5em 0 0.5em;
         border-radius: 10px;
-        margin-top: 0.4em;
-        margin-right: 0.4em;
+        margin-top: 0.2em;
+        margin-right: 0.2em;
       }
       
       @keyframes blink {
@@ -73,13 +73,13 @@
       mainBar = {
         layer = "top";
         position = "top";
-        height = 30;
+        height = 24;
         modules-left = ["hyprland/workspaces"]; 
         modules-right = ["tray" "hyprland/language" "battery" "clock"];
   
         "tray" = {
-          icon-size = 21;
-          spacing = 10;
+          icon-size = 18;
+          spacing = 6;
         };
   
         "hyprland/language" = {
