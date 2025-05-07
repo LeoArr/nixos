@@ -115,6 +115,10 @@ in
     hyprpaper
   ];
 
+  environment.interactiveShellInit = ''
+    alias lg="lazygit"
+  '';
+
   hardware.graphics.enable = true; # needed for wayland WMs
   hardware.bluetooth.enable = true;
   services.blueman.enable = true;

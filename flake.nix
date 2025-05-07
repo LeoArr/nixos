@@ -16,11 +16,11 @@
       # Leo's ThinkPad T490
       t490 = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
-	specialArgs = { inherit inputs; };
+	      specialArgs = { inherit inputs; };
       	modules = [
           ./hosts/t490/configuration.nix
-	  inputs.home-manager.nixosModules.default
-	  inputs.catppuccin.nixosModules.catppuccin
+	        inputs.home-manager.nixosModules.default
+	        inputs.catppuccin.nixosModules.catppuccin
         ];
       };
       # Other hosts' config goes here
