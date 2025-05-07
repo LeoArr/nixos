@@ -63,6 +63,10 @@
     
     file
     killall
+
+    #dev
+    cargo
+    rustc
   ];
 
   programs.git = {
@@ -76,6 +80,10 @@
     };
   };
 
+  environment.shellAliases = {
+    lg = "lazygit";
+  };
+  
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
 
